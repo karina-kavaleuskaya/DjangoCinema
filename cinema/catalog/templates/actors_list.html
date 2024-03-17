@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Actors List:</h1>
+{% for actor in actors_list %}
+  <h3><a href="{{ actor.get_absolute_url }}"> {{ actor }}</a></h3>
+
+{% endfor %}
+
+{% endblock %}
+

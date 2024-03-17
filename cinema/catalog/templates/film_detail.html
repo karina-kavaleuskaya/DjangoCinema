@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ film.title}}</h1>
+<h3>Description: {{film.description}}</h3>
+<h3>Producer: {{ film.producer.first_name}}{{ film.producer.last_name}}</h3>
+<h3>Actors:{% for actor in film.actors.all %} {{ actor.first_name }} {{ actor.last_name }}{% if not forloop.last %}, {% endif %}
+  {% endfor %}</h3>
+
+<h3>Genres: {% for genre in film.genre.all %}
+  {{ genre.name }}{% if not forloop.last %}, {% endif %}
+  {% endfor %}</h3>
+
+<h3> Age Restrictions: {{film.age}}</h3>
+<h3>Sessions:</h3>
+{% for session in film.session_set.all %}
+  <p><a href="{{ session.get_absolute_url }}">{{ session.timetable }}</a></p>
+{% endfor %}
+
+
+{% if film.image %}
+<img src="{{ film.image.url }}" alt="Film Image">
+{% endif %}
+
+
+{% endblock %}
+

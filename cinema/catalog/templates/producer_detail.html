@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ producer.first_name }} {{ producer.last_name }}</h1>
+<h2>First Name: {{ producer.first_name }}</h2>
+<h2>Last Name: {{ producer.last_name }}</h2>
+<h2>Date of Birth: {{ producer.date_of_birth }}</h2>
+{% if producer.date_of_death %}
+<h2>Date of Death: {{ producer.date_of_death }}</h2>
+{% endif %}
+{% if producer.image %}
+<img src="{{ producer.image.url }}" alt="Producer Image">
+{% endif %}
+{% endblock %}

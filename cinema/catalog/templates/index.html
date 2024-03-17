@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Local Cinema</h1>
+
+<ul>
+  <li> Films: {{ num_films }}</li>
+  <li> Session: {{ num_session }}</li>
+    <li> Tickets: {{ num_ticket }}</li>
+  <li> Tickets available now: {{num_ticket_available}} </li>
+</ul>
+
+{%endblock%}

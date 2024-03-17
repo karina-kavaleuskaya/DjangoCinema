@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Film: {{session.film}}</h1>
+<p>Hall: {{ session.hall}}</p>
+<p>Timetable: {{session.timetable}}</p>
+
+<p>Available Tickets</p>
+<p>Seat I Price</p>
+{% for ticket in session.ticket_set.all %}
+  {% if ticket.status == 'Available' %}
+    <p>{{ ticket.seat }} {{ ticket.price }} <a href="{% url 'reserve_ticket' ticket.id %}">Reserve</a>
+  {% endif %}
+{% endfor %}
+
+{% endblock %}

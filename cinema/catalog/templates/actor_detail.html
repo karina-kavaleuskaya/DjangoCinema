@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ actors.first_name }} {{ actors.last_name }}</h1>
+<h2>First Name: {{ actors.first_name }}</h2>
+<h2>Last Name: {{ actors.last_name }}</h2>
+<h2>Date of Birth: {{ actors.date_of_birth }}</h2>
+{% if actors.date_of_death %}
+<h2>Date of Death: {{ actors.date_of_death }}</h2>
+{% endif %}
+{% if actors.image %}
+<img src="{{ actors.image.url }}" alt="Actor Image">
+{% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Producers List:</h1>
+{% for producer in producer_list %}
+  <h3><a href="{{ producer.get_absolute_url }}"> {{ producer }}</a></h3>
+
+{% endfor %}
+
+{% endblock %}
+
